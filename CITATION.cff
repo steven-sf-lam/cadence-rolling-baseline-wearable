@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: Cadence-Conditioned Rolling Baseline Estimation for Wearable Running Data
+message: "If you use this dataset or methodology, please cite the associated preprint."
+type: dataset
+authors:
+  - family-names: Lam
+    given-names: Steven Shiu-fun
+    orcid: https://orcid.org/0009-0002-3599-7130   
+version: 1.0.0
+date-released: 2026-02-17
+license: MIT
+doi: 10.51224/SportRxiv.735
+url: https://sportrxiv.org/index.php/server/preprint/view/735/1601
