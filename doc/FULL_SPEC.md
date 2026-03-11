@@ -191,7 +191,7 @@ The default threshold is:
 
 ### 7.4 Threshold robustness window
 
-In the associated Stage 1 paper, the range **140–150 spm** is treated as an **operational robustness window** for the present dataset because it balances variance reduction, retained data, and stability.[file:189]
+In the associated Stage 1 paper, the range **140–150 spm** is treated as an **operational robustness window** for the present dataset because it balances variance reduction, retained data, and stability.
 
 This range is **not** claimed to be universal across runners.
 
@@ -226,7 +226,7 @@ The current Stage 1 N-of-1 configuration uses:
 - `HRmax = 200`
 - `HRrest = 54`
 
-These values are configuration settings for the current subject and are not claimed to be general defaults.[file:189]
+These values are configuration settings for the current subject and are not claimed to be general defaults.
 
 ### 8.3 HRR band cut points
 
@@ -238,7 +238,7 @@ The current implementation uses the following cut points:
 - 88%
 - 95%
 
-These define five zones (`Z1`–`Z5`) on the HRR scale.[file:189]
+These define five zones (`Z1`–`Z5`) on the HRR scale.
 
 ### 8.4 Boundary handling
 
@@ -252,7 +252,7 @@ Values outside the configured range are clipped to the nearest boundary band:
 
 For comparative analysis, a `%HRmax` partition may also be reported.
 
-This alternative is included for interpretability and robustness comparison, not as the primary conditioning scheme.[file:189]
+This alternative is included for interpretability and robustness comparison, not as the primary conditioning scheme.
 
 ---
 
@@ -328,16 +328,16 @@ For each HR band, the baseline difference is computed as:
 
 `Delta(b) = mu_current(b) - mu_previous(b)`
 
-This 30-day previous-versus-current comparison is the main dual-window analysis reported in the manuscript.[file:189]
+This 30-day previous-versus-current comparison is the main dual-window analysis reported in the manuscript.
 
 ### 11.2 Illustrative window-length comparison
 
 In addition to the default 30-day setting, the Stage 1 manuscript reports an illustrative
-**14-day versus 30-day** window-length comparison as a robustness check.[file:189]
+**14-day versus 30-day** window-length comparison as a robustness check.
 
-In that comparison, the 14-day setting yields higher temporal sensitivity and higher baseline variance, whereas the 30-day setting yields smoother estimator behavior; both settings show directionally consistent variance stabilization under cadence conditioning.[file:189]
+In that comparison, the 14-day setting yields higher temporal sensitivity and higher baseline variance, whereas the 30-day setting yields smoother estimator behavior; both settings show directionally consistent variance stabilization under cadence conditioning.
 
-The 14-day setting should therefore be interpreted as a **supplementary window-length robustness comparison**, not as the primary default analysis window.[file:189]
+The 14-day setting should therefore be interpreted as a **supplementary window-length robustness comparison**, not as the primary default analysis window.
 
 ### 11.3 Intended use
 
@@ -346,7 +346,7 @@ Dual-window comparison is used as a **qualitative stability probe** and **signal
 It is not intended as:
 - inferential change detection,
 - evidence of physiological improvement,
-- or a formal longitudinal outcome estimate.[file:189]
+- or a formal longitudinal outcome estimate.
 
 ### 11.4 Data sufficiency
 
@@ -355,7 +355,7 @@ For transparency, retained-second counts are tracked for each band and each wind
 Very sparse bands may be:
 - flagged,
 - de-emphasized,
-- or set to `NA` in output tables, depending on reporting rules.[file:189]
+- or set to `NA` in output tables, depending on reporting rules.
 
 ---
 
@@ -371,7 +371,7 @@ Primary outputs:
 - SD by HR band,
 - reduction percentage,
 - log(SD ratio),
-- descriptive bootstrap bounds where applicable.[file:189]
+- descriptive bootstrap bounds where applicable.
 
 ### 12.2 Threshold sensitivity sweep
 
@@ -381,7 +381,7 @@ Primary outputs:
 - baseline SD,
 - normalized SD index,
 - retained sample percentage,
-- threshold-specific stabilization summaries.[file:189]
+- threshold-specific stabilization summaries.
 
 ### 12.3 Intensity-stratification comparison
 
@@ -390,7 +390,7 @@ Compares:
 - HRR-based stratification,
 - `%HRmax`-based stratification.
 
-This evaluates whether cadence gating adds stabilization beyond HR-based partitioning alone.[file:189]
+This evaluates whether cadence gating adds stabilization beyond HR-based partitioning alone.
 
 ### 12.4 HR-only versus cadence-gated comparison
 
@@ -399,19 +399,19 @@ Compares:
 - HR-only banding,
 - HR-banding plus cadence gating.
 
-This isolates the incremental contribution of cadence gating.[file:189]
+This isolates the incremental contribution of cadence gating.
 
 ### 12.5 Cadence–HR temporal separation check
 
 Examines whether cadence gating acts as a circular partition of the HR signal by aligning cadence transition events and evaluating HR response lag.
 
-The expected interpretation is temporal separation, not instantaneous HR partitioning.[file:189]
+The expected interpretation is temporal separation, not instantaneous HR partitioning.
 
 ### 12.6 Permutation-based sanity check
 
 Uses label or gating perturbation as a structural sanity check.
 
-If the observed stabilization disappears under permutation, this supports the interpretation that the stabilization is linked to real cadence-defined regime structure rather than arbitrary sample removal.[file:189]
+If the observed stabilization disappears under permutation, this supports the interpretation that the stabilization is linked to real cadence-defined regime structure rather than arbitrary sample removal.
 
 ---
 
@@ -435,7 +435,7 @@ Accordingly, bootstrap intervals should be interpreted as:
 
 ### 13.4 Dual-window outputs
 
-For dual-window summaries, any percentile ranges are likewise descriptive and should not be interpreted as formal hypothesis-test outputs.[file:189]
+For dual-window summaries, any percentile ranges are likewise descriptive and should not be interpreted as formal hypothesis-test outputs.
 
 ---
 
@@ -450,7 +450,7 @@ The implementation may generate the following output families:
 - window-length robustness tables (e.g. 14-day vs 30-day),
 - event-aligned cadence–HR plots,
 - incremental stabilization comparison tables,
-- permutation sanity-check summaries.[file:189]
+- permutation sanity-check summaries.
 
 Exact formatting can vary across paper, notebook, or app-facing output layers, but the computational logic should remain consistent with this specification.
 
@@ -467,9 +467,9 @@ The following are explicitly out of scope for the present Stage 1 manuscript-lev
 - formal change-detection inference,
 - multi-runner external validation,
 - complete sensor-error modeling,
-- and downstream application-facing composite execution scores.[file:189]
+- and downstream application-facing composite execution scores.
 
-A downstream per-session score may exist in broader product or app design, but it is **not** the methodological contribution documented here.[file:189]
+A downstream per-session score may exist in broader product or app design, but it is **not** the methodological contribution documented here.
 
 ---
 
@@ -483,7 +483,7 @@ Current manuscript-aligned settings:
 - illustrative window-length robustness comparison: `14 vs 30 days`
 - HRmax: `200`
 - HRrest: `54`
-- HRR cut points: `59 / 74 / 84 / 88 / 95`[file:189]
+- HRR cut points: `59 / 74 / 84 / 88 / 95`
 
 These settings are provided for reproducibility of the current Stage 1 analysis and should not be interpreted as universally optimal.
 
